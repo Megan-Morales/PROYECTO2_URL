@@ -120,11 +120,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Asignacion_EyC.cpp" />
+    <ClCompile Include="Curso.cpp" />
+    <ClCompile Include="Cursos.cpp" />
+    <ClCompile Include="Estudiante.cpp" />
+    <ClCompile Include="Persona.cpp" />
     <ClCompile Include="PortalEstudiantes.cpp" />
+    <ClCompile Include="PortalTrabajadores.cpp" />
     <ClCompile Include="URL.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Asignacion_EyC.h" />
+    <ClInclude Include="Curso.h" />
+    <ClInclude Include="Cursos.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DoublyLinkedList.h" />
+    <ClInclude Include="Estudiante.h" />
+    <ClInclude Include="Persona.h" />
     <ClInclude Include="PortalEstudiantes.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PortalTrabajadores.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="URL.h">
@@ -134,6 +151,9 @@
   <ItemGroup>
     <EmbeddedResource Include="PortalEstudiantes.resx">
       <DependentUpon>PortalEstudiantes.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortalTrabajadores.resx">
+      <DependentUpon>PortalTrabajadores.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="URL.resx">
       <DependentUpon>URL.h</DependentUpon>

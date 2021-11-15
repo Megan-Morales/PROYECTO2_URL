@@ -1,4 +1,8 @@
 #include "URL.h"
+#include "PortalEstudiantes.h"
+#include "DoublyLinkedList.h"
+#include "Persona.h"
+#include "Curso.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
