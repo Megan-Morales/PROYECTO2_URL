@@ -196,9 +196,10 @@ namespace Proyecto2MeganMorales1221120 {
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		PortalTrabajadores^ Portal_Trabajadores = gcnew PortalTrabajadores();
+		this->Hide();
 		Portal_Trabajadores->ShowDialog();
 		this->Show();
-		this->Hide();
+		
 		
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {

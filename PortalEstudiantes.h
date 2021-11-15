@@ -56,7 +56,7 @@ namespace Proyecto2MeganMorales1221120 {
 			this->listaCurso = listaCurso;
 			this->listaAsignacionEyC = listaAsignacionEyC;
 
-			//Después de mil pruebas: Orden para crear las listas
+			// Orden para crear las listas
 			/*Estudiante* estudiantePrueba = new Estudiante("Megan", "Morales", 3016552860101, "pregrado", 1221120, "Ingeniería", 20);
 			Curso* cursoPrueba = new Curso("Matemática");
 			Asignacion_EyC* asignacionPrueba = new Asignacion_EyC(estudiantePrueba, cursoPrueba, 90);

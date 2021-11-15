@@ -1158,6 +1158,7 @@ private: System::Windows::Forms::Button^ button13;
 			this->button10->TabIndex = 43;
 			this->button10->Text = L"Volver";
 			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &PortalTrabajadores::button10_Click);
 			// 
 			// groupBox10
 			// 
@@ -1247,5 +1248,8 @@ private: System::Windows::Forms::Button^ button13;
 #pragma endregion
 	private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+}
 };
 }
