@@ -21,12 +21,12 @@ namespace Proyecto2MeganMorales1221120 {
 	/// </summary>
 	public ref class URL : public System::Windows::Forms::Form
 	{
-		DoublyLinkedList<Persona>* estudiantesPregrado;
-		DoublyLinkedList<Persona>* estudiantesPostgrado;
-		DoublyLinkedList<Persona>* trabajadorDocente;
-		DoublyLinkedList<Persona>* trabajadorNoDocente;
-		DoublyLinkedList<Curso>* listaCurso;
-		DoublyLinkedList<Asignacion_EyC>* asignacionEyC;
+		DoublyLinkedList<Persona>* estudiantesPregrado= new DoublyLinkedList<Persona>;
+		DoublyLinkedList<Persona>* estudiantesPostgrado = new DoublyLinkedList<Persona>;
+		DoublyLinkedList<Persona>* trabajadorDocente = new DoublyLinkedList<Persona>;
+		DoublyLinkedList<Persona>* trabajadorNoDocente = new DoublyLinkedList<Persona>;
+		DoublyLinkedList<Curso>* listaCurso = new DoublyLinkedList<Curso>;
+		DoublyLinkedList<Asignacion_EyC>* asignacionEyC = new DoublyLinkedList<Asignacion_EyC>;
 
 
 	public:
@@ -38,19 +38,7 @@ namespace Proyecto2MeganMorales1221120 {
 			//TODO: agregar código de constructor aquí
 			//
 		}
-		URL(DoublyLinkedList<Persona>* estudiantesPregrado, DoublyLinkedList<Persona>* estudiantesPostgrado, DoublyLinkedList<Persona>* trabajadorDocente, DoublyLinkedList<Persona>* trabajadorNoDocente, DoublyLinkedList<Curso>* listaCurso, DoublyLinkedList<Asignacion_EyC>* asignacionEyC)
-		{
-			InitializeComponent();
-			this->estudiantesPregrado = estudiantesPregrado;
-			this->estudiantesPostgrado = estudiantesPostgrado;
-			this->trabajadorDocente = trabajadorDocente;
-			this->trabajadorNoDocente = trabajadorNoDocente;
-			this->listaCurso = listaCurso;
-			this->asignacionEyC = asignacionEyC;
-			//
-			//TODO: agregar código de constructor aquí
-			//
-		}
+		
 
 	protected:
 		/// <summary>
@@ -201,16 +189,17 @@ namespace Proyecto2MeganMorales1221120 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		PortalEstudiantes^ Portal_Estudiantes = gcnew PortalEstudiantes(this->estudiantesPregrado,this->estudiantesPostgrado,this->trabajadorDocente,this->trabajadorNoDocente,this->listaCurso);
+		PortalEstudiantes^ Portal_Estudiantes = gcnew PortalEstudiantes(this->estudiantesPregrado,this->estudiantesPostgrado,this->trabajadorDocente,this->trabajadorNoDocente,this->listaCurso, this->asignacionEyC);
 		this->Hide();
 		Portal_Estudiantes->ShowDialog();
 		this->Show();
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		PortalTrabajadores^ Portal_Trabajadores = gcnew PortalTrabajadores();
-		this->Hide();
 		Portal_Trabajadores->ShowDialog();
 		this->Show();
+		this->Hide();
+		
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		Cursos^ Portal_Cursos = gcnew Cursos();
