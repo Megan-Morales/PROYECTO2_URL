@@ -182,6 +182,12 @@ private: System::Windows::Forms::Button^ button13;
 		void InitializeComponent(void)
 		{
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
+			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
 			this->txtCarnetEliminar = (gcnew System::Windows::Forms::TextBox());
 			this->label28 = (gcnew System::Windows::Forms::Label());
@@ -252,28 +258,22 @@ private: System::Windows::Forms::Button^ button13;
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->txtNombre = (gcnew System::Windows::Forms::TextBox());
 			this->btnAgregarAlumno = (gcnew System::Windows::Forms::Button());
-			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
-			this->label25 = (gcnew System::Windows::Forms::Label());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
-			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
-			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
+			this->groupBox9->SuspendLayout();
+			this->groupBox8->SuspendLayout();
 			this->groupBox7->SuspendLayout();
 			this->groupBox6->SuspendLayout();
 			this->groupBox5->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->groupBox4->SuspendLayout();
 			this->groupBox2->SuspendLayout();
-			this->groupBox8->SuspendLayout();
-			this->groupBox9->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox10->SuspendLayout();
 			this->SuspendLayout();
@@ -296,6 +296,75 @@ private: System::Windows::Forms::Button^ button13;
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Gestionar trabajadores";
+			// 
+			// groupBox9
+			// 
+			this->groupBox9->Controls->Add(this->button9);
+			this->groupBox9->Location = System::Drawing::Point(623, 507);
+			this->groupBox9->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox9->Name = L"groupBox9";
+			this->groupBox9->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox9->Size = System::Drawing::Size(195, 144);
+			this->groupBox9->TabIndex = 71;
+			this->groupBox9->TabStop = false;
+			this->groupBox9->Text = L"Calcular el salario promedio";
+			// 
+			// button9
+			// 
+			this->button9->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button9->Location = System::Drawing::Point(53, 94);
+			this->button9->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(83, 32);
+			this->button9->TabIndex = 42;
+			this->button9->Text = L"Calcular";
+			this->button9->UseVisualStyleBackColor = true;
+			// 
+			// groupBox8
+			// 
+			this->groupBox8->Controls->Add(this->textBox20);
+			this->groupBox8->Controls->Add(this->label25);
+			this->groupBox8->Controls->Add(this->button8);
+			this->groupBox8->Location = System::Drawing::Point(623, 359);
+			this->groupBox8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox8->Name = L"groupBox8";
+			this->groupBox8->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox8->Size = System::Drawing::Size(195, 144);
+			this->groupBox8->TabIndex = 70;
+			this->groupBox8->TabStop = false;
+			this->groupBox8->Text = L"Buscar trabajador";
+			// 
+			// textBox20
+			// 
+			this->textBox20->Location = System::Drawing::Point(72, 39);
+			this->textBox20->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBox20->Name = L"textBox20";
+			this->textBox20->Size = System::Drawing::Size(100, 22);
+			this->textBox20->TabIndex = 42;
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label25->Location = System::Drawing::Point(7, 44);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(43, 22);
+			this->label25->TabIndex = 41;
+			this->label25->Text = L"DPI: ";
+			// 
+			// button8
+			// 
+			this->button8->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button8->Location = System::Drawing::Point(63, 84);
+			this->button8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(92, 32);
+			this->button8->TabIndex = 42;
+			this->button8->Text = L"Buscar";
+			this->button8->UseVisualStyleBackColor = true;
 			// 
 			// groupBox7
 			// 
@@ -1060,75 +1129,6 @@ private: System::Windows::Forms::Button^ button13;
 			this->btnAgregarAlumno->Text = L"Agregar";
 			this->btnAgregarAlumno->UseVisualStyleBackColor = true;
 			// 
-			// groupBox8
-			// 
-			this->groupBox8->Controls->Add(this->textBox20);
-			this->groupBox8->Controls->Add(this->label25);
-			this->groupBox8->Controls->Add(this->button8);
-			this->groupBox8->Location = System::Drawing::Point(623, 359);
-			this->groupBox8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox8->Name = L"groupBox8";
-			this->groupBox8->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox8->Size = System::Drawing::Size(195, 144);
-			this->groupBox8->TabIndex = 70;
-			this->groupBox8->TabStop = false;
-			this->groupBox8->Text = L"Buscar trabajador";
-			// 
-			// textBox20
-			// 
-			this->textBox20->Location = System::Drawing::Point(72, 39);
-			this->textBox20->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBox20->Name = L"textBox20";
-			this->textBox20->Size = System::Drawing::Size(100, 22);
-			this->textBox20->TabIndex = 42;
-			// 
-			// label25
-			// 
-			this->label25->AutoSize = true;
-			this->label25->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label25->Location = System::Drawing::Point(7, 44);
-			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(43, 22);
-			this->label25->TabIndex = 41;
-			this->label25->Text = L"DPI: ";
-			// 
-			// button8
-			// 
-			this->button8->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button8->Location = System::Drawing::Point(63, 84);
-			this->button8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(92, 32);
-			this->button8->TabIndex = 42;
-			this->button8->Text = L"Buscar";
-			this->button8->UseVisualStyleBackColor = true;
-			// 
-			// groupBox9
-			// 
-			this->groupBox9->Controls->Add(this->button9);
-			this->groupBox9->Location = System::Drawing::Point(623, 507);
-			this->groupBox9->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox9->Name = L"groupBox9";
-			this->groupBox9->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox9->Size = System::Drawing::Size(195, 144);
-			this->groupBox9->TabIndex = 71;
-			this->groupBox9->TabStop = false;
-			this->groupBox9->Text = L"Calcular el salario promedio";
-			// 
-			// button9
-			// 
-			this->button9->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button9->Location = System::Drawing::Point(53, 94);
-			this->button9->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(83, 32);
-			this->button9->TabIndex = 42;
-			this->button9->Text = L"Calcular";
-			this->button9->UseVisualStyleBackColor = true;
-			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
@@ -1144,14 +1144,14 @@ private: System::Windows::Forms::Button^ button13;
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(678, 534);
+			this->dataGridView1->Size = System::Drawing::Size(1049, 534);
 			this->dataGridView1->TabIndex = 1;
 			// 
 			// button10
 			// 
 			this->button10->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button10->Location = System::Drawing::Point(1460, 12);
+			this->button10->Location = System::Drawing::Point(1854, 16);
 			this->button10->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(83, 32);
@@ -1166,7 +1166,7 @@ private: System::Windows::Forms::Button^ button13;
 			this->groupBox10->Controls->Add(this->button11);
 			this->groupBox10->Controls->Add(this->comboBox1);
 			this->groupBox10->Controls->Add(this->button12);
-			this->groupBox10->Location = System::Drawing::Point(1049, 16);
+			this->groupBox10->Location = System::Drawing::Point(1289, 11);
 			this->groupBox10->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox10->Name = L"groupBox10";
 			this->groupBox10->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -1174,30 +1174,6 @@ private: System::Windows::Forms::Button^ button13;
 			this->groupBox10->TabIndex = 70;
 			this->groupBox10->TabStop = false;
 			this->groupBox10->Text = L"Mostrar";
-			// 
-			// button12
-			// 
-			this->button12->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button12->Location = System::Drawing::Point(19, 79);
-			this->button12->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(92, 32);
-			this->button12->TabIndex = 42;
-			this->button12->Text = L"Mostrar";
-			this->button12->UseVisualStyleBackColor = true;
-			// 
-			// button11
-			// 
-			this->button11->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button11->Location = System::Drawing::Point(174, 67);
-			this->button11->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(92, 32);
-			this->button11->TabIndex = 43;
-			this->button11->Text = L"Exportar";
-			this->button11->UseVisualStyleBackColor = true;
 			// 
 			// button13
 			// 
@@ -1211,12 +1187,36 @@ private: System::Windows::Forms::Button^ button13;
 			this->button13->Text = L"Importar";
 			this->button13->UseVisualStyleBackColor = true;
 			// 
+			// button11
+			// 
+			this->button11->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button11->Location = System::Drawing::Point(174, 67);
+			this->button11->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(92, 32);
+			this->button11->TabIndex = 43;
+			this->button11->Text = L"Exportar";
+			this->button11->UseVisualStyleBackColor = true;
+			// 
+			// button12
+			// 
+			this->button12->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button12->Location = System::Drawing::Point(19, 79);
+			this->button12->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(92, 32);
+			this->button12->TabIndex = 42;
+			this->button12->Text = L"Mostrar";
+			this->button12->UseVisualStyleBackColor = true;
+			// 
 			// PortalTrabajadores
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->ClientSize = System::Drawing::Size(1568, 724);
+			this->ClientSize = System::Drawing::Size(1969, 724);
 			this->Controls->Add(this->groupBox10);
 			this->Controls->Add(this->button10);
 			this->Controls->Add(this->dataGridView1);
@@ -1225,6 +1225,9 @@ private: System::Windows::Forms::Button^ button13;
 			this->Name = L"PortalTrabajadores";
 			this->Text = L"PortalTrabajadores";
 			this->groupBox1->ResumeLayout(false);
+			this->groupBox9->ResumeLayout(false);
+			this->groupBox8->ResumeLayout(false);
+			this->groupBox8->PerformLayout();
 			this->groupBox7->ResumeLayout(false);
 			this->groupBox7->PerformLayout();
 			this->groupBox6->ResumeLayout(false);
@@ -1237,9 +1240,6 @@ private: System::Windows::Forms::Button^ button13;
 			this->groupBox4->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
-			this->groupBox8->ResumeLayout(false);
-			this->groupBox8->PerformLayout();
-			this->groupBox9->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox10->ResumeLayout(false);
 			this->ResumeLayout(false);
