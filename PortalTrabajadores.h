@@ -147,6 +147,7 @@ private: System::Windows::Forms::Button^ button10;
 private: System::Windows::Forms::GroupBox^ groupBox10;
 private: System::Windows::Forms::Button^ button11;
 private: System::Windows::Forms::Button^ button12;
+private: System::Windows::Forms::Button^ button13;
 
 
 
@@ -263,6 +264,7 @@ private: System::Windows::Forms::Button^ button12;
 			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
 			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->button13 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->groupBox7->SuspendLayout();
 			this->groupBox6->SuspendLayout();
@@ -913,7 +915,7 @@ private: System::Windows::Forms::Button^ button12;
 			// 
 			this->txtAgregarCurso->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtAgregarCurso->Location = System::Drawing::Point(45, 118);
+			this->txtAgregarCurso->Location = System::Drawing::Point(45, 119);
 			this->txtAgregarCurso->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtAgregarCurso->Name = L"txtAgregarCurso";
 			this->txtAgregarCurso->Size = System::Drawing::Size(91, 32);
@@ -1159,6 +1161,7 @@ private: System::Windows::Forms::Button^ button12;
 			// 
 			// groupBox10
 			// 
+			this->groupBox10->Controls->Add(this->button13);
 			this->groupBox10->Controls->Add(this->button11);
 			this->groupBox10->Controls->Add(this->comboBox1);
 			this->groupBox10->Controls->Add(this->button12);
@@ -1187,13 +1190,25 @@ private: System::Windows::Forms::Button^ button12;
 			// 
 			this->button11->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button11->Location = System::Drawing::Point(166, 50);
+			this->button11->Location = System::Drawing::Point(174, 67);
 			this->button11->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(92, 32);
 			this->button11->TabIndex = 43;
 			this->button11->Text = L"Exportar";
 			this->button11->UseVisualStyleBackColor = true;
+			// 
+			// button13
+			// 
+			this->button13->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button13->Location = System::Drawing::Point(174, 30);
+			this->button13->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button13->Name = L"button13";
+			this->button13->Size = System::Drawing::Size(92, 32);
+			this->button13->TabIndex = 44;
+			this->button13->Text = L"Importar";
+			this->button13->UseVisualStyleBackColor = true;
 			// 
 			// PortalTrabajadores
 			// 

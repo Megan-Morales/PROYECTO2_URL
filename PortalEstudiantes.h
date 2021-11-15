@@ -29,6 +29,19 @@ namespace Proyecto2MeganMorales1221120 {
 		DoublyLinkedList<Asignacion_EyC>* listaAsignacionEyC;
 		DoublyLinkedList<Curso>* listaCurso;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::GroupBox^ groupBox5;
+	private: System::Windows::Forms::GroupBox^ groupBox6;
+	private: System::Windows::Forms::GroupBox^ groupBox10;
+	private: System::Windows::Forms::GroupBox^ groupBox9;
+	private: System::Windows::Forms::Button^ btnFacultadPregrado;
+	private: System::Windows::Forms::TextBox^ txtFacultadPregrado;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::GroupBox^ groupBox8;
+	private: System::Windows::Forms::Button^ btnCarnetProm;
+	private: System::Windows::Forms::TextBox^ txtCarnetProm;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::GroupBox^ groupBox7;
+	private: System::Windows::Forms::Label^ label29;
 	private: System::Windows::Forms::DataGridView^ dataMostrar;
 		  
 	public:
@@ -69,34 +82,34 @@ namespace Proyecto2MeganMorales1221120 {
 	private: System::Windows::Forms::Button^ btnImportarDatos;
 	protected:
 
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::TextBox^ txtBuscarDpi;
 	private: System::Windows::Forms::Button^ btnBuscarDpi;
-	private: System::Windows::Forms::Button^ btnCarnetProm;
 
 
 
-	private: System::Windows::Forms::TextBox^ txtCarnetProm;
-
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Button^ btnFacultadPregrado;
-
-	private: System::Windows::Forms::TextBox^ txtFacultadPregrado;
 
 
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label5;
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::Label^ label6;
+
 	private: System::Windows::Forms::Button^ btnAgregarAlumno;
 	private: System::Windows::Forms::TextBox^ txtNombre;
 
 
-	private: System::Windows::Forms::Label^ label7;
+
 	private: System::Windows::Forms::Button^ btnCalcularCantidadDeAlumnos;
 
-	private: System::Windows::Forms::Label^ label8;
+
 	private: System::Windows::Forms::Label^ label16;
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::TextBox^ txtPreOpost;
@@ -149,7 +162,7 @@ namespace Proyecto2MeganMorales1221120 {
 	private: System::Windows::Forms::Label^ label28;
 	private: System::Windows::Forms::Button^ btnEliminar;
 
-	private: System::Windows::Forms::Label^ label11;
+
 	private: System::Windows::Forms::GroupBox^ groupBox4;
 	private: System::Windows::Forms::Label^ label19;
 	private: System::Windows::Forms::TextBox^ txtNota;
@@ -166,11 +179,11 @@ private: System::Windows::Forms::TextBox^ txtCursos;
 
 	private: System::Windows::Forms::ComboBox^ comboBoxMostrarAlumnos;
 
-	private: System::Windows::Forms::Label^ label29;
+
 	private: System::Windows::Forms::Button^ btnExportarEstudiantes;
 
-	private: System::Windows::Forms::Button^ btnFacultadNumeroDeEstudiantes;
-	private: System::Windows::Forms::TextBox^ txtFacultadNumeroDeEstudiantes;
+
+
 private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 
@@ -196,17 +209,8 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 		{
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->btnImportarDatos = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->txtBuscarDpi = (gcnew System::Windows::Forms::TextBox());
 			this->btnBuscarDpi = (gcnew System::Windows::Forms::Button());
-			this->btnCarnetProm = (gcnew System::Windows::Forms::Button());
-			this->txtCarnetProm = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->btnFacultadPregrado = (gcnew System::Windows::Forms::Button());
-			this->txtFacultadPregrado = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
@@ -222,10 +226,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->txtNombre = (gcnew System::Windows::Forms::TextBox());
 			this->btnAgregarAlumno = (gcnew System::Windows::Forms::Button());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->btnCalcularCantidadDeAlumnos = (gcnew System::Windows::Forms::Button());
-			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->btnCancelar = (gcnew System::Windows::Forms::Button());
 			this->btnModificar = (gcnew System::Windows::Forms::Button());
@@ -249,7 +250,6 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->txtCarnetEliminar = (gcnew System::Windows::Forms::TextBox());
 			this->label28 = (gcnew System::Windows::Forms::Label());
 			this->btnEliminar = (gcnew System::Windows::Forms::Button());
-			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->txtNota = (gcnew System::Windows::Forms::TextBox());
@@ -260,48 +260,53 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->txtCursos = (gcnew System::Windows::Forms::TextBox());
 			this->btnMostrarEstudiantes = (gcnew System::Windows::Forms::Button());
 			this->comboBoxMostrarAlumnos = (gcnew System::Windows::Forms::ComboBox());
-			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->btnExportarEstudiantes = (gcnew System::Windows::Forms::Button());
-			this->btnFacultadNumeroDeEstudiantes = (gcnew System::Windows::Forms::Button());
-			this->txtFacultadNumeroDeEstudiantes = (gcnew System::Windows::Forms::TextBox());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->ofdImportar = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->dataMostrar = (gcnew System::Windows::Forms::DataGridView());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox7 = (gcnew System::Windows::Forms::GroupBox());
+			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->groupBox8 = (gcnew System::Windows::Forms::GroupBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->txtCarnetProm = (gcnew System::Windows::Forms::TextBox());
+			this->btnCarnetProm = (gcnew System::Windows::Forms::Button());
+			this->groupBox9 = (gcnew System::Windows::Forms::GroupBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->btnFacultadPregrado = (gcnew System::Windows::Forms::Button());
+			this->txtFacultadPregrado = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox10 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->groupBox4->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataMostrar))->BeginInit();
+			this->groupBox5->SuspendLayout();
+			this->groupBox6->SuspendLayout();
+			this->groupBox7->SuspendLayout();
+			this->groupBox8->SuspendLayout();
+			this->groupBox9->SuspendLayout();
+			this->groupBox10->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// btnImportarDatos
 			// 
-			this->btnImportarDatos->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnImportarDatos->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnImportarDatos->Location = System::Drawing::Point(12, 12);
+			this->btnImportarDatos->Location = System::Drawing::Point(163, 34);
 			this->btnImportarDatos->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnImportarDatos->Name = L"btnImportarDatos";
-			this->btnImportarDatos->Size = System::Drawing::Size(381, 32);
+			this->btnImportarDatos->Size = System::Drawing::Size(85, 32);
 			this->btnImportarDatos->TabIndex = 1;
-			this->btnImportarDatos->Text = L"Importar datos de los estudiantes";
+			this->btnImportarDatos->Text = L"Importar";
 			this->btnImportarDatos->UseVisualStyleBackColor = true;
 			this->btnImportarDatos->Click += gcnew System::EventHandler(this, &PortalEstudiantes::btnImportarDatos_Click);
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(12, 70);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(133, 24);
-			this->label1->TabIndex = 2;
-			this->label1->Text = L"Buscar estudiante:";
-			// 
 			// txtBuscarDpi
 			// 
-			this->txtBuscarDpi->Location = System::Drawing::Point(237, 70);
+			this->txtBuscarDpi->Location = System::Drawing::Point(50, 44);
 			this->txtBuscarDpi->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtBuscarDpi->Name = L"txtBuscarDpi";
 			this->txtBuscarDpi->Size = System::Drawing::Size(100, 22);
@@ -309,99 +314,15 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// btnBuscarDpi
 			// 
-			this->btnBuscarDpi->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnBuscarDpi->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnBuscarDpi->Location = System::Drawing::Point(359, 65);
+			this->btnBuscarDpi->Location = System::Drawing::Point(50, 82);
 			this->btnBuscarDpi->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnBuscarDpi->Name = L"btnBuscarDpi";
-			this->btnBuscarDpi->Size = System::Drawing::Size(33, 32);
+			this->btnBuscarDpi->Size = System::Drawing::Size(85, 32);
 			this->btnBuscarDpi->TabIndex = 4;
-			this->btnBuscarDpi->Text = L"Ir";
+			this->btnBuscarDpi->Text = L"Buscar";
 			this->btnBuscarDpi->UseVisualStyleBackColor = true;
-			// 
-			// btnCarnetProm
-			// 
-			this->btnCarnetProm->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnCarnetProm->Location = System::Drawing::Point(361, 123);
-			this->btnCarnetProm->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->btnCarnetProm->Name = L"btnCarnetProm";
-			this->btnCarnetProm->Size = System::Drawing::Size(33, 32);
-			this->btnCarnetProm->TabIndex = 7;
-			this->btnCarnetProm->Text = L"Ir";
-			this->btnCarnetProm->UseVisualStyleBackColor = true;
-			// 
-			// txtCarnetProm
-			// 
-			this->txtCarnetProm->Location = System::Drawing::Point(237, 133);
-			this->txtCarnetProm->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->txtCarnetProm->Name = L"txtCarnetProm";
-			this->txtCarnetProm->Size = System::Drawing::Size(100, 22);
-			this->txtCarnetProm->TabIndex = 6;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(12, 106);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(277, 24);
-			this->label2->TabIndex = 5;
-			this->label2->Text = L"Ingrese el carnet para calcular el promedio";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(12, 133);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(201, 24);
-			this->label3->TabIndex = 8;
-			this->label3->Text = L"y el curso con la nota más alta:";
-			// 
-			// btnFacultadPregrado
-			// 
-			this->btnFacultadPregrado->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnFacultadPregrado->Location = System::Drawing::Point(359, 175);
-			this->btnFacultadPregrado->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->btnFacultadPregrado->Name = L"btnFacultadPregrado";
-			this->btnFacultadPregrado->Size = System::Drawing::Size(33, 32);
-			this->btnFacultadPregrado->TabIndex = 11;
-			this->btnFacultadPregrado->Text = L"Ir";
-			this->btnFacultadPregrado->UseVisualStyleBackColor = true;
-			// 
-			// txtFacultadPregrado
-			// 
-			this->txtFacultadPregrado->Location = System::Drawing::Point(237, 180);
-			this->txtFacultadPregrado->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->txtFacultadPregrado->Name = L"txtFacultadPregrado";
-			this->txtFacultadPregrado->Size = System::Drawing::Size(100, 22);
-			this->txtFacultadPregrado->TabIndex = 10;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(12, 180);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(130, 24);
-			this->label4->TabIndex = 9;
-			this->label4->Text = L"Ingrese la facultad:";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(8, 210);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(288, 22);
-			this->label5->TabIndex = 12;
-			this->label5->Text = L"(para buscar al mejor estudiante de pregrado)";
 			// 
 			// groupBox1
 			// 
@@ -419,11 +340,11 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->groupBox1->Controls->Add(this->label9);
 			this->groupBox1->Controls->Add(this->txtNombre);
 			this->groupBox1->Controls->Add(this->btnAgregarAlumno);
-			this->groupBox1->Location = System::Drawing::Point(224, 394);
+			this->groupBox1->Location = System::Drawing::Point(19, 33);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox1->Size = System::Drawing::Size(304, 364);
+			this->groupBox1->Size = System::Drawing::Size(287, 364);
 			this->groupBox1->TabIndex = 13;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Agregar nuevo estudiante";
@@ -565,50 +486,17 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->btnAgregarAlumno->Text = L"Agregar";
 			this->btnAgregarAlumno->UseVisualStyleBackColor = true;
 			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(13, 267);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(252, 22);
-			this->label6->TabIndex = 17;
-			this->label6->Text = L"(para calcular el número de estudiantes)";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(12, 242);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(130, 24);
-			this->label7->TabIndex = 14;
-			this->label7->Text = L"Ingrese la facultad:";
-			// 
 			// btnCalcularCantidadDeAlumnos
 			// 
-			this->btnCalcularCantidadDeAlumnos->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnCalcularCantidadDeAlumnos->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnCalcularCantidadDeAlumnos->Location = System::Drawing::Point(359, 304);
+			this->btnCalcularCantidadDeAlumnos->Location = System::Drawing::Point(55, 82);
 			this->btnCalcularCantidadDeAlumnos->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnCalcularCantidadDeAlumnos->Name = L"btnCalcularCantidadDeAlumnos";
-			this->btnCalcularCantidadDeAlumnos->Size = System::Drawing::Size(33, 32);
+			this->btnCalcularCantidadDeAlumnos->Size = System::Drawing::Size(80, 32);
 			this->btnCalcularCantidadDeAlumnos->TabIndex = 20;
-			this->btnCalcularCantidadDeAlumnos->Text = L"Ir";
+			this->btnCalcularCantidadDeAlumnos->Text = L"Calcular";
 			this->btnCalcularCantidadDeAlumnos->UseVisualStyleBackColor = true;
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(8, 308);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(288, 24);
-			this->label8->TabIndex = 21;
-			this->label8->Text = L"Calcular la cantidad de alumnos en maestría:";
 			// 
 			// groupBox2
 			// 
@@ -630,11 +518,11 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->groupBox2->Controls->Add(this->txtNombreModificar);
 			this->groupBox2->Controls->Add(this->label21);
 			this->groupBox2->Controls->Add(this->txtCarnetModificar);
-			this->groupBox2->Location = System::Drawing::Point(779, 394);
+			this->groupBox2->Location = System::Drawing::Point(19, 410);
 			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox2->Size = System::Drawing::Size(324, 364);
+			this->groupBox2->Size = System::Drawing::Size(287, 364);
 			this->groupBox2->TabIndex = 14;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Modificar estudiante";
@@ -678,7 +566,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			this->btnCarnetModificar->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnCarnetModificar->Location = System::Drawing::Point(216, 31);
+			this->btnCarnetModificar->Location = System::Drawing::Point(208, 31);
 			this->btnCarnetModificar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnCarnetModificar->Name = L"btnCarnetModificar";
 			this->btnCarnetModificar->Size = System::Drawing::Size(52, 32);
@@ -699,7 +587,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// txtPregradoModificar
 			// 
-			this->txtPregradoModificar->Location = System::Drawing::Point(187, 266);
+			this->txtPregradoModificar->Location = System::Drawing::Point(179, 266);
 			this->txtPregradoModificar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtPregradoModificar->Name = L"txtPregradoModificar";
 			this->txtPregradoModificar->Size = System::Drawing::Size(100, 22);
@@ -718,7 +606,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// txtFacultadModificar
 			// 
-			this->txtFacultadModificar->Location = System::Drawing::Point(187, 231);
+			this->txtFacultadModificar->Location = System::Drawing::Point(179, 231);
 			this->txtFacultadModificar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtFacultadModificar->Name = L"txtFacultadModificar";
 			this->txtFacultadModificar->Size = System::Drawing::Size(100, 22);
@@ -737,7 +625,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// txtDpiModificar
 			// 
-			this->txtDpiModificar->Location = System::Drawing::Point(187, 194);
+			this->txtDpiModificar->Location = System::Drawing::Point(179, 194);
 			this->txtDpiModificar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtDpiModificar->Name = L"txtDpiModificar";
 			this->txtDpiModificar->Size = System::Drawing::Size(100, 22);
@@ -756,7 +644,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// txtAñoModificar
 			// 
-			this->txtAñoModificar->Location = System::Drawing::Point(187, 159);
+			this->txtAñoModificar->Location = System::Drawing::Point(179, 159);
 			this->txtAñoModificar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtAñoModificar->Name = L"txtAñoModificar";
 			this->txtAñoModificar->Size = System::Drawing::Size(100, 22);
@@ -775,7 +663,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// txtApellidoModificar
 			// 
-			this->txtApellidoModificar->Location = System::Drawing::Point(187, 118);
+			this->txtApellidoModificar->Location = System::Drawing::Point(179, 118);
 			this->txtApellidoModificar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtApellidoModificar->Name = L"txtApellidoModificar";
 			this->txtApellidoModificar->Size = System::Drawing::Size(100, 22);
@@ -794,7 +682,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// txtNombreModificar
 			// 
-			this->txtNombreModificar->Location = System::Drawing::Point(187, 82);
+			this->txtNombreModificar->Location = System::Drawing::Point(179, 82);
 			this->txtNombreModificar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtNombreModificar->Name = L"txtNombreModificar";
 			this->txtNombreModificar->Size = System::Drawing::Size(100, 22);
@@ -824,11 +712,11 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->groupBox3->Controls->Add(this->txtCarnetEliminar);
 			this->groupBox3->Controls->Add(this->label28);
 			this->groupBox3->Controls->Add(this->btnEliminar);
-			this->groupBox3->Location = System::Drawing::Point(547, 614);
+			this->groupBox3->Location = System::Drawing::Point(329, 39);
 			this->groupBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox3->Size = System::Drawing::Size(213, 144);
+			this->groupBox3->Size = System::Drawing::Size(181, 144);
 			this->groupBox3->TabIndex = 14;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Eliminar estudiante";
@@ -864,17 +752,6 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->btnEliminar->Text = L"Eliminar";
 			this->btnEliminar->UseVisualStyleBackColor = true;
 			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(151, 71);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(45, 22);
-			this->label11->TabIndex = 22;
-			this->label11->Text = L"(Dpi)";
-			// 
 			// groupBox4
 			// 
 			this->groupBox4->Controls->Add(this->label19);
@@ -884,11 +761,11 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->groupBox4->Controls->Add(this->label18);
 			this->groupBox4->Controls->Add(this->txtAgregarCurso);
 			this->groupBox4->Controls->Add(this->txtCursos);
-			this->groupBox4->Location = System::Drawing::Point(547, 394);
+			this->groupBox4->Location = System::Drawing::Point(329, 187);
 			this->groupBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox4->Name = L"groupBox4";
 			this->groupBox4->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox4->Size = System::Drawing::Size(213, 208);
+			this->groupBox4->Size = System::Drawing::Size(181, 208);
 			this->groupBox4->TabIndex = 15;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Agregar cursos a un estudiante";
@@ -898,7 +775,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->label19->AutoSize = true;
 			this->label19->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label19->Location = System::Drawing::Point(21, 128);
+			this->label19->Location = System::Drawing::Point(4, 122);
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(47, 22);
 			this->label19->TabIndex = 40;
@@ -906,7 +783,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// txtNota
 			// 
-			this->txtNota->Location = System::Drawing::Point(89, 126);
+			this->txtNota->Location = System::Drawing::Point(72, 120);
 			this->txtNota->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtNota->Name = L"txtNota";
 			this->txtNota->Size = System::Drawing::Size(100, 22);
@@ -914,7 +791,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// txtCarnetCursos
 			// 
-			this->txtCarnetCursos->Location = System::Drawing::Point(89, 50);
+			this->txtCarnetCursos->Location = System::Drawing::Point(72, 44);
 			this->txtCarnetCursos->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtCarnetCursos->Name = L"txtCarnetCursos";
 			this->txtCarnetCursos->Size = System::Drawing::Size(100, 22);
@@ -925,7 +802,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->label17->AutoSize = true;
 			this->label17->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label17->Location = System::Drawing::Point(24, 54);
+			this->label17->Location = System::Drawing::Point(7, 48);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(59, 22);
 			this->label17->TabIndex = 37;
@@ -936,7 +813,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->label18->AutoSize = true;
 			this->label18->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label18->Location = System::Drawing::Point(21, 87);
+			this->label18->Location = System::Drawing::Point(4, 81);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(62, 22);
 			this->label18->TabIndex = 36;
@@ -946,7 +823,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			this->txtAgregarCurso->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtAgregarCurso->Location = System::Drawing::Point(64, 162);
+			this->txtAgregarCurso->Location = System::Drawing::Point(41, 160);
 			this->txtAgregarCurso->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtAgregarCurso->Name = L"txtAgregarCurso";
 			this->txtAgregarCurso->Size = System::Drawing::Size(91, 32);
@@ -956,7 +833,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// txtCursos
 			// 
-			this->txtCursos->Location = System::Drawing::Point(89, 85);
+			this->txtCursos->Location = System::Drawing::Point(72, 79);
 			this->txtCursos->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtCursos->Name = L"txtCursos";
 			this->txtCursos->Size = System::Drawing::Size(100, 22);
@@ -964,67 +841,36 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// btnMostrarEstudiantes
 			// 
-			this->btnMostrarEstudiantes->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnMostrarEstudiantes->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnMostrarEstudiantes->Location = System::Drawing::Point(1137, 434);
+			this->btnMostrarEstudiantes->Location = System::Drawing::Point(22, 72);
 			this->btnMostrarEstudiantes->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnMostrarEstudiantes->Name = L"btnMostrarEstudiantes";
-			this->btnMostrarEstudiantes->Size = System::Drawing::Size(243, 32);
+			this->btnMostrarEstudiantes->Size = System::Drawing::Size(85, 32);
 			this->btnMostrarEstudiantes->TabIndex = 23;
-			this->btnMostrarEstudiantes->Text = L"Mostrar estudiantes";
+			this->btnMostrarEstudiantes->Text = L"Mostrar";
 			this->btnMostrarEstudiantes->UseVisualStyleBackColor = true;
 			// 
 			// comboBoxMostrarAlumnos
 			// 
 			this->comboBoxMostrarAlumnos->FormattingEnabled = true;
-			this->comboBoxMostrarAlumnos->Location = System::Drawing::Point(1237, 394);
+			this->comboBoxMostrarAlumnos->Location = System::Drawing::Point(7, 34);
 			this->comboBoxMostrarAlumnos->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->comboBoxMostrarAlumnos->Name = L"comboBoxMostrarAlumnos";
 			this->comboBoxMostrarAlumnos->Size = System::Drawing::Size(121, 24);
 			this->comboBoxMostrarAlumnos->TabIndex = 24;
 			// 
-			// label29
-			// 
-			this->label29->AutoSize = true;
-			this->label29->Font = (gcnew System::Drawing::Font(L"Papyrus", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label29->Location = System::Drawing::Point(1132, 394);
-			this->label29->Name = L"label29";
-			this->label29->Size = System::Drawing::Size(81, 27);
-			this->label29->TabIndex = 60;
-			this->label29->Text = L"Mostrar: ";
-			// 
 			// btnExportarEstudiantes
 			// 
-			this->btnExportarEstudiantes->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnExportarEstudiantes->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnExportarEstudiantes->Location = System::Drawing::Point(1137, 473);
+			this->btnExportarEstudiantes->Location = System::Drawing::Point(163, 72);
 			this->btnExportarEstudiantes->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnExportarEstudiantes->Name = L"btnExportarEstudiantes";
-			this->btnExportarEstudiantes->Size = System::Drawing::Size(243, 58);
+			this->btnExportarEstudiantes->Size = System::Drawing::Size(85, 32);
 			this->btnExportarEstudiantes->TabIndex = 61;
-			this->btnExportarEstudiantes->Text = L"Exportar listado actual de estudiantes";
+			this->btnExportarEstudiantes->Text = L"Exportar";
 			this->btnExportarEstudiantes->UseVisualStyleBackColor = true;
-			// 
-			// btnFacultadNumeroDeEstudiantes
-			// 
-			this->btnFacultadNumeroDeEstudiantes->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnFacultadNumeroDeEstudiantes->Location = System::Drawing::Point(361, 239);
-			this->btnFacultadNumeroDeEstudiantes->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->btnFacultadNumeroDeEstudiantes->Name = L"btnFacultadNumeroDeEstudiantes";
-			this->btnFacultadNumeroDeEstudiantes->Size = System::Drawing::Size(33, 32);
-			this->btnFacultadNumeroDeEstudiantes->TabIndex = 63;
-			this->btnFacultadNumeroDeEstudiantes->Text = L"Ir";
-			this->btnFacultadNumeroDeEstudiantes->UseVisualStyleBackColor = true;
-			// 
-			// txtFacultadNumeroDeEstudiantes
-			// 
-			this->txtFacultadNumeroDeEstudiantes->Location = System::Drawing::Point(237, 242);
-			this->txtFacultadNumeroDeEstudiantes->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->txtFacultadNumeroDeEstudiantes->Name = L"txtFacultadNumeroDeEstudiantes";
-			this->txtFacultadNumeroDeEstudiantes->Size = System::Drawing::Size(100, 22);
-			this->txtFacultadNumeroDeEstudiantes->TabIndex = 62;
 			// 
 			// ofdImportar
 			// 
@@ -1042,19 +888,19 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 			this->dataMostrar->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataMostrar->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataMostrar->Location = System::Drawing::Point(435, 32);
+			this->dataMostrar->Location = System::Drawing::Point(12, 153);
 			this->dataMostrar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataMostrar->Name = L"dataMostrar";
 			this->dataMostrar->RowHeadersWidth = 51;
 			this->dataMostrar->RowTemplate->Height = 24;
-			this->dataMostrar->Size = System::Drawing::Size(794, 314);
+			this->dataMostrar->Size = System::Drawing::Size(619, 693);
 			this->dataMostrar->TabIndex = 64;
 			// 
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(1283, 11);
+			this->button1->Location = System::Drawing::Point(1283, 12);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(108, 32);
@@ -1063,40 +909,173 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &PortalEstudiantes::button1_Click);
 			// 
+			// groupBox5
+			// 
+			this->groupBox5->Controls->Add(this->groupBox10);
+			this->groupBox5->Controls->Add(this->groupBox9);
+			this->groupBox5->Controls->Add(this->groupBox8);
+			this->groupBox5->Controls->Add(this->groupBox7);
+			this->groupBox5->Controls->Add(this->groupBox3);
+			this->groupBox5->Controls->Add(this->groupBox4);
+			this->groupBox5->Controls->Add(this->groupBox2);
+			this->groupBox5->Controls->Add(this->groupBox1);
+			this->groupBox5->Location = System::Drawing::Point(652, 49);
+			this->groupBox5->Name = L"groupBox5";
+			this->groupBox5->Size = System::Drawing::Size(724, 797);
+			this->groupBox5->TabIndex = 66;
+			this->groupBox5->TabStop = false;
+			this->groupBox5->Text = L"Gestionar estudiantes";
+			// 
+			// groupBox6
+			// 
+			this->groupBox6->Controls->Add(this->comboBoxMostrarAlumnos);
+			this->groupBox6->Controls->Add(this->btnMostrarEstudiantes);
+			this->groupBox6->Controls->Add(this->btnExportarEstudiantes);
+			this->groupBox6->Controls->Add(this->btnImportarDatos);
+			this->groupBox6->Location = System::Drawing::Point(12, 12);
+			this->groupBox6->Name = L"groupBox6";
+			this->groupBox6->Size = System::Drawing::Size(279, 126);
+			this->groupBox6->TabIndex = 67;
+			this->groupBox6->TabStop = false;
+			this->groupBox6->Text = L"Mostrar";
+			// 
+			// groupBox7
+			// 
+			this->groupBox7->Controls->Add(this->label29);
+			this->groupBox7->Controls->Add(this->txtBuscarDpi);
+			this->groupBox7->Controls->Add(this->btnBuscarDpi);
+			this->groupBox7->Location = System::Drawing::Point(329, 399);
+			this->groupBox7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox7->Name = L"groupBox7";
+			this->groupBox7->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox7->Size = System::Drawing::Size(181, 129);
+			this->groupBox7->TabIndex = 43;
+			this->groupBox7->TabStop = false;
+			this->groupBox7->Text = L"Buscar estudiante";
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label29->Location = System::Drawing::Point(6, 41);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(38, 22);
+			this->label29->TabIndex = 44;
+			this->label29->Text = L"Dpi:";
+			// 
+			// groupBox8
+			// 
+			this->groupBox8->Controls->Add(this->btnCarnetProm);
+			this->groupBox8->Controls->Add(this->txtCarnetProm);
+			this->groupBox8->Controls->Add(this->label1);
+			this->groupBox8->Location = System::Drawing::Point(329, 534);
+			this->groupBox8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox8->Name = L"groupBox8";
+			this->groupBox8->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox8->Size = System::Drawing::Size(181, 240);
+			this->groupBox8->TabIndex = 45;
+			this->groupBox8->TabStop = false;
+			this->groupBox8->Text = L"Calcular promedio y el curso con la nota más alta ";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(56, 72);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(62, 22);
+			this->label1->TabIndex = 44;
+			this->label1->Text = L"Carnet: ";
+			// 
+			// txtCarnetProm
+			// 
+			this->txtCarnetProm->Location = System::Drawing::Point(40, 106);
+			this->txtCarnetProm->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->txtCarnetProm->Name = L"txtCarnetProm";
+			this->txtCarnetProm->Size = System::Drawing::Size(100, 22);
+			this->txtCarnetProm->TabIndex = 45;
+			// 
+			// btnCarnetProm
+			// 
+			this->btnCarnetProm->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnCarnetProm->Location = System::Drawing::Point(41, 142);
+			this->btnCarnetProm->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnCarnetProm->Name = L"btnCarnetProm";
+			this->btnCarnetProm->Size = System::Drawing::Size(83, 32);
+			this->btnCarnetProm->TabIndex = 46;
+			this->btnCarnetProm->Text = L"Calcular";
+			this->btnCarnetProm->UseVisualStyleBackColor = true;
+			// 
+			// groupBox9
+			// 
+			this->groupBox9->Controls->Add(this->btnFacultadPregrado);
+			this->groupBox9->Controls->Add(this->txtFacultadPregrado);
+			this->groupBox9->Controls->Add(this->label2);
+			this->groupBox9->Location = System::Drawing::Point(528, 187);
+			this->groupBox9->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox9->Name = L"groupBox9";
+			this->groupBox9->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox9->Size = System::Drawing::Size(181, 251);
+			this->groupBox9->TabIndex = 43;
+			this->groupBox9->TabStop = false;
+			this->groupBox9->Text = L"Buscar por medio de facultad";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(6, 96);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(71, 22);
+			this->label2->TabIndex = 41;
+			this->label2->Text = L"Facultad: ";
+			// 
+			// btnFacultadPregrado
+			// 
+			this->btnFacultadPregrado->Font = (gcnew System::Drawing::Font(L"Papyrus", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnFacultadPregrado->Location = System::Drawing::Point(55, 139);
+			this->btnFacultadPregrado->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnFacultadPregrado->Name = L"btnFacultadPregrado";
+			this->btnFacultadPregrado->Size = System::Drawing::Size(80, 32);
+			this->btnFacultadPregrado->TabIndex = 43;
+			this->btnFacultadPregrado->Text = L"Buscar";
+			this->btnFacultadPregrado->UseVisualStyleBackColor = true;
+			// 
+			// txtFacultadPregrado
+			// 
+			this->txtFacultadPregrado->Location = System::Drawing::Point(75, 96);
+			this->txtFacultadPregrado->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->txtFacultadPregrado->Name = L"txtFacultadPregrado";
+			this->txtFacultadPregrado->Size = System::Drawing::Size(100, 22);
+			this->txtFacultadPregrado->TabIndex = 42;
+			// 
+			// groupBox10
+			// 
+			this->groupBox10->Controls->Add(this->btnCalcularCantidadDeAlumnos);
+			this->groupBox10->Location = System::Drawing::Point(528, 442);
+			this->groupBox10->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox10->Name = L"groupBox10";
+			this->groupBox10->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox10->Size = System::Drawing::Size(181, 139);
+			this->groupBox10->TabIndex = 44;
+			this->groupBox10->TabStop = false;
+			this->groupBox10->Text = L"Calcular la cantidad de alumnos en maestría";
+			// 
 			// PortalEstudiantes
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1403, 817);
+			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->ClientSize = System::Drawing::Size(1403, 858);
+			this->Controls->Add(this->groupBox6);
+			this->Controls->Add(this->groupBox5);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->dataMostrar);
-			this->Controls->Add(this->btnFacultadNumeroDeEstudiantes);
-			this->Controls->Add(this->txtFacultadNumeroDeEstudiantes);
-			this->Controls->Add(this->btnExportarEstudiantes);
-			this->Controls->Add(this->label29);
-			this->Controls->Add(this->comboBoxMostrarAlumnos);
-			this->Controls->Add(this->btnMostrarEstudiantes);
-			this->Controls->Add(this->groupBox4);
-			this->Controls->Add(this->label11);
-			this->Controls->Add(this->groupBox3);
-			this->Controls->Add(this->groupBox2);
-			this->Controls->Add(this->label8);
-			this->Controls->Add(this->btnCalcularCantidadDeAlumnos);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->btnFacultadPregrado);
-			this->Controls->Add(this->txtFacultadPregrado);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->btnCarnetProm);
-			this->Controls->Add(this->txtCarnetProm);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->btnBuscarDpi);
-			this->Controls->Add(this->txtBuscarDpi);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->btnImportarDatos);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"PortalEstudiantes";
 			this->Text = L"Portal de estudiantes";
@@ -1110,8 +1089,16 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox4->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataMostrar))->EndInit();
+			this->groupBox5->ResumeLayout(false);
+			this->groupBox6->ResumeLayout(false);
+			this->groupBox7->ResumeLayout(false);
+			this->groupBox7->PerformLayout();
+			this->groupBox8->ResumeLayout(false);
+			this->groupBox8->PerformLayout();
+			this->groupBox9->ResumeLayout(false);
+			this->groupBox9->PerformLayout();
+			this->groupBox10->ResumeLayout(false);
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
