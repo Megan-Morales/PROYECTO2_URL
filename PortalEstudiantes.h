@@ -4,6 +4,7 @@
 #include "Estudiante.h"
 #include "Curso.h"
 #include "Asignacion_EyC.h"
+#include <ctime>
 
 
 namespace Proyecto2MeganMorales1221120 {
@@ -936,7 +937,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->groupBox10->Size = System::Drawing::Size(181, 139);
 			this->groupBox10->TabIndex = 44;
 			this->groupBox10->TabStop = false;
-			this->groupBox10->Text = L"Calcular la cantidad de alumnos en maestría";
+			this->groupBox10->Text = L"Calcular la cantidad de alumnos en postgrado";
 			// 
 			// groupBox9
 			// 
@@ -1108,6 +1109,15 @@ private: void ReestablecerMatriz() {
 	dataMostrar->RowHeadersVisible = false;
 	
 };
+private: int generarCarnet(String^ añoIngreso) {
+		srand(time(NULL));
+
+		int numeroAleatroio = rand() % (99999 - 10000 + 1) + 10000;
+		String^ concatenacion = Convert::ToString(numeroAleatroio) + añoIngreso->Substring(2,2);
+		return Convert::ToInt64(concatenacion);
+
+	}
+
 private: System::Void PortalEstudiantes_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void btnImportarDatos_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1129,10 +1139,12 @@ private: System::Void btnImportarDatos_Click(System::Object^ sender, System::Eve
 			if (archivoColumna->Length > 0) {
 				int cantidadColumnas = archivoColumna->Length;
 
-				array<String^>^ heardersColumns = { "Apellido", "Nombre", "Año de ingreso", "DPI", "Facultad", "Grado académico", "Cursos" };
+				array<String^>^ heardersColumns = { "Carnet", "Apellido", "Nombre", "Año de ingreso", "DPI", "Facultad", "Grado académico", "Cursos" };
+				
+
 
 				//Agrega las columnas
-				for (int i = 0; i < cantidadColumnas; i++) {
+				for (int i = 0; i < cantidadColumnas+1; i++) {
 					//Crea una columna
 
 					DataGridViewColumn^ nuevacolumna = gcnew DataGridViewColumn();
@@ -1162,11 +1174,16 @@ private: System::Void btnImportarDatos_Click(System::Object^ sender, System::Eve
 				//Llena el DatagridView
 				for (int i = 0; i < archivoLineas->Length; i++) {
 					array<String^>^ fila = archivoLineas[i]->Split(',');
+					int carnet = generarCarnet(fila[2]);
+					
+					dataMostrar->Rows[i]->Cells[0]->Value = carnet;
 					int j = 0;
-
 					//Si alguna fila tiene más o menos objetos no afecta al funcionamiento ya que utiliza la cantidad de elementos de la primer fila
 					while ((j < cantidadColumnas) && (j < fila->Length)) {
-						dataMostrar->Rows[i]->Cells[j]->Value = fila[j];
+						
+						
+						dataMostrar->Rows[i]->Cells[j+1]->Value = fila[j];
+
 						j++;
 					}
 				}
