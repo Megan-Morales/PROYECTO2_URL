@@ -4,7 +4,7 @@
 #include "Estudiante.h"
 #include "Curso.h"
 #include "Asignacion_EyC.h"
-#include <ctime>
+
 
 
 namespace Proyecto2MeganMorales1221120 {
@@ -29,6 +29,7 @@ namespace Proyecto2MeganMorales1221120 {
 		DoublyLinkedList<Persona>* trabajadorNoDocente;
 		DoublyLinkedList<Asignacion_EyC>* listaAsignacionEyC;
 		DoublyLinkedList<Curso>* listaCurso;
+	
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::GroupBox^ groupBox5;
 	private: System::Windows::Forms::GroupBox^ groupBox6;
@@ -86,20 +87,6 @@ namespace Proyecto2MeganMorales1221120 {
 
 	private: System::Windows::Forms::TextBox^ txtBuscarDpi;
 	private: System::Windows::Forms::Button^ btnBuscarDpi;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 
@@ -187,11 +174,6 @@ private: System::Windows::Forms::TextBox^ txtCursos;
 
 private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
-
-
-
-
-
 
 
 
@@ -1110,12 +1092,10 @@ private: void ReestablecerMatriz() {
 	
 };
 private: int generarCarnet(String^ añoIngreso) {
-		srand(time(NULL));
-
-		int numeroAleatroio = rand() % (99999 - 10000 + 1) + 10000;
-		String^ concatenacion = Convert::ToString(numeroAleatroio) + añoIngreso->Substring(2,2);
-		return Convert::ToInt64(concatenacion);
-
+		
+		int numeroAleatorio =rand()%(10000-99999+1)+10000;
+		String^ concatenacion = (Convert::ToString(numeroAleatorio))->Substring(0,5) + añoIngreso->Substring(2, 2);
+		return Convert::ToInt64(concatenacion);		
 	}
 
 private: System::Void PortalEstudiantes_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -1131,18 +1111,14 @@ private: System::Void btnImportarDatos_Click(System::Object^ sender, System::Eve
 		//Se utiliza el objeto File para leer el archivo solo cuando el FileName es correcto
 		//Importante haber llamado al namespace System::IO antes de usar File
 		array<String^>^ archivoLineas = File::ReadAllLines(ofdImportar->FileName);
-
 		if (archivoLineas->Length > 0) {
 
 			//Obtiene la cantidad de elementos de la primer linea y ese toma como cantidad de columnas
 			array<String^>^ archivoColumna = archivoLineas[0]->Split(',');
 			if (archivoColumna->Length > 0) {
 				int cantidadColumnas = archivoColumna->Length;
-
 				array<String^>^ heardersColumns = { "Carnet", "Apellido", "Nombre", "Año de ingreso", "DPI", "Facultad", "Grado académico", "Cursos" };
 				
-
-
 				//Agrega las columnas
 				for (int i = 0; i < cantidadColumnas+1; i++) {
 					//Crea una columna
@@ -1180,9 +1156,13 @@ private: System::Void btnImportarDatos_Click(System::Object^ sender, System::Eve
 					int j = 0;
 					//Si alguna fila tiene más o menos objetos no afecta al funcionamiento ya que utiliza la cantidad de elementos de la primer fila
 					while ((j < cantidadColumnas) && (j < fila->Length)) {
-						
-						
+					
 						dataMostrar->Rows[i]->Cells[j+1]->Value = fila[j];
+						if (j >= 6) {
+							array<String^>^ curso_Nota = fila[j]->Split(' ');
+							//curso_Nota[0]=>curso
+							//curso_Nota[1]=>nota
+						}
 
 						j++;
 					}
