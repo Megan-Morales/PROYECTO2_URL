@@ -21,8 +21,8 @@ namespace Proyecto2MeganMorales1221120 {
 	/// </summary>
 	public ref class URL : public System::Windows::Forms::Form
 	{
-		DoublyLinkedList<Persona>* estudiantesPregrado= new DoublyLinkedList<Persona>;
-		DoublyLinkedList<Persona>* estudiantesPostgrado = new DoublyLinkedList<Persona>;
+		DoublyLinkedList<Estudiante>* estudiantesPregrado = new DoublyLinkedList<Estudiante>;
+		DoublyLinkedList<Estudiante>* estudiantesPostgrado = new DoublyLinkedList<Estudiante>;
 		DoublyLinkedList<Persona>* trabajadorDocente = new DoublyLinkedList<Persona>;
 		DoublyLinkedList<Persona>* trabajadorNoDocente = new DoublyLinkedList<Persona>;
 		DoublyLinkedList<Curso>* listaCurso = new DoublyLinkedList<Curso>;
@@ -189,7 +189,7 @@ namespace Proyecto2MeganMorales1221120 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		PortalEstudiantes^ Portal_Estudiantes = gcnew PortalEstudiantes(this->estudiantesPregrado,this->estudiantesPostgrado,this->trabajadorDocente,this->trabajadorNoDocente,this->listaCurso, this->asignacionEyC);
+		PortalEstudiantes^ Portal_Estudiantes = gcnew PortalEstudiantes(this->estudiantesPregrado, this->estudiantesPostgrado, this->trabajadorDocente, this->trabajadorNoDocente, this->listaCurso, this->asignacionEyC);
 		this->Hide();
 		Portal_Estudiantes->ShowDialog();
 		this->Show();
