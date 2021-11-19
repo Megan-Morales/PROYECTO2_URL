@@ -18,7 +18,7 @@ protected:
 
 public:
 
-    Estudiante(string nombre, string apellidos, string DPI, string nivelAcademico, int carnet, string facultad, int añoIngreso) :Persona(nombre, apellidos, DPI) {
+    Estudiante(string nombre, string apellidos, int DPI, string nivelAcademico, int carnet, string facultad, int añoIngreso) :Persona(nombre, apellidos, DPI) {
         this->nivelAcademico = nivelAcademico;
         this->carnet = carnet;
         this->facultad = facultad;

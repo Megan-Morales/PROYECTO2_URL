@@ -7,11 +7,11 @@ class Persona
 protected:
     string nombre;
     string apellidos;
-    string DPI;
+    int DPI;
 
 public:
 
-    Persona(string nombre, string apellidos, string DPI) {
+    Persona(string nombre, string apellidos, int DPI) {
         this->nombre = nombre;
         this->apellidos = apellidos;
         this->DPI = DPI;
@@ -20,7 +20,7 @@ public:
     virtual string getNombre() {
         return this->nombre;
     }
-    virtual string getDpi() {
+    virtual int getDpi() {
         return this->DPI;
     }
     virtual string getApellidos() {

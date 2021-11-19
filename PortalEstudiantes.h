@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include "DoublyLinkedList.h"
 #include "Persona.h"
 #include "Estudiante.h"
@@ -30,9 +29,6 @@ namespace Proyecto2MeganMorales1221120 {
 		DoublyLinkedList<Persona>* trabajadorNoDocente;
 		DoublyLinkedList<Asignacion_EyC>* listaAsignacionEyC;
 		DoublyLinkedList<Curso>* listaCurso;
-		Curso* cursoEstudiante;
-		Asignacion_EyC* asignaciones;
-		Estudiante* estudianteNuevo;
 	
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::GroupBox^ groupBox5;
@@ -178,6 +174,8 @@ private: System::Windows::Forms::TextBox^ txtCursos;
 
 private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
+
+
 
 	private:
 		/// <summary>
@@ -1091,6 +1089,7 @@ private: void ReestablecerMatriz() {
 	dataMostrar->Rows->Clear();
 	dataMostrar->Columns->Clear();
 	dataMostrar->RowHeadersVisible = false;
+	
 };
 private: int generarCarnet(String^ añoIngreso) {
 		
@@ -1098,12 +1097,6 @@ private: int generarCarnet(String^ añoIngreso) {
 		String^ concatenacion = (Convert::ToString(numeroAleatorio))->Substring(0,5) + añoIngreso->Substring(2, 2);
 		return Convert::ToInt64(concatenacion);		
 	}
-	   void MarshalString(String^ s, string& os) {
-		   using namespace Runtime::InteropServices;
-		   const char* chars = (const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
-		   os = chars;
-		   Marshal::FreeHGlobal(IntPtr((void*)chars));
-	   }
 
 private: System::Void PortalEstudiantes_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -1114,8 +1107,12 @@ private: System::Void btnImportarDatos_Click(System::Object^ sender, System::Eve
 	//Unicamnte si el reultado de la apertura del archivo es exitosa se carga el archivo
 	if (ofdImportar->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 		ReestablecerMatriz(); //Se elimina cualquier contenido de la matriz
+
+		//Se utiliza el objeto File para leer el archivo solo cuando el FileName es correcto
+		//Importante haber llamado al namespace System::IO antes de usar File
 		array<String^>^ archivoLineas = File::ReadAllLines(ofdImportar->FileName);
 		if (archivoLineas->Length > 0) {
+
 			//Obtiene la cantidad de elementos de la primer linea y ese toma como cantidad de columnas
 			array<String^>^ archivoColumna = archivoLineas[0]->Split(',');
 			if (archivoColumna->Length > 0) {
@@ -1155,50 +1152,19 @@ private: System::Void btnImportarDatos_Click(System::Object^ sender, System::Eve
 					array<String^>^ fila = archivoLineas[i]->Split(',');
 					int carnet = generarCarnet(fila[2]);
 					
-					String^ apellido = fila[0];
-					String^ nombre = fila[1];
-					int año = Convert::ToInt64(fila[2]);
-					String^ dpi = fila[3];
-					String^ facultad = fila[4];
-					String^ gradoAcademico = fila[5];
-
-					string apellido1, nombre1, facultad1, gradoAcademico1, dpi1;
-
-					MarshalString(apellido, apellido1);
-					MarshalString(nombre, nombre1);
-					MarshalString(facultad, facultad1);
-					MarshalString(gradoAcademico, gradoAcademico1);
-					MarshalString(dpi, dpi1);
-					estudianteNuevo = new Estudiante(nombre1, apellido1, dpi1, gradoAcademico1, carnet, facultad1, año);
-					
 					dataMostrar->Rows[i]->Cells[0]->Value = carnet;
 					int j = 0;
 					//Si alguna fila tiene más o menos objetos no afecta al funcionamiento ya que utiliza la cantidad de elementos de la primer fila
 					while ((j < cantidadColumnas) && (j < fila->Length)) {
-						dataMostrar->Rows[i]->Cells[j + 1]->Value = fila[j];
+					
+						dataMostrar->Rows[i]->Cells[j+1]->Value = fila[j];
 						if (j >= 6) {
 							array<String^>^ curso_Nota = fila[j]->Split(' ');
-							String^ curso = curso_Nota[0];
-							double nota = Convert::ToDouble(curso_Nota[1]);
-							string curso1;
-							MarshalString(curso, curso1);
-							cursoEstudiante = new Curso(curso1);
-							asignaciones = new Asignacion_EyC(estudianteNuevo, cursoEstudiante, nota);
-							
 							//curso_Nota[0]=>curso
 							//curso_Nota[1]=>nota
 						}
+
 						j++;
-					}
-					if (gradoAcademico == "pregrado") {
-						this->estudiantesPregrado->add(estudianteNuevo);
-						this->listaAsignacionEyC->add(asignaciones);
-						this->listaCurso->add(cursoEstudiante);
-					}
-					else if (gradoAcademico == "postgrado" || gradoAcademico == "doctorado") {
-						this->estudiantesPostgrado->add(estudianteNuevo);
-						this->listaAsignacionEyC->add(asignaciones);
-						this->listaCurso->add(cursoEstudiante);
 					}
 				}
 			}
