@@ -24,8 +24,8 @@ namespace Proyecto2MeganMorales1221120 {
 	public ref class PortalEstudiantes : public System::Windows::Forms::Form
 	{
 	public:
-		DoublyLinkedList<Estudiante>* estudiantesPregrado;
-		DoublyLinkedList<Estudiante>* estudiantesPostgrado;
+		DoublyLinkedList<Persona>* estudiantesPregrado;
+		DoublyLinkedList<Persona>* estudiantesPostgrado;
 		DoublyLinkedList<Persona>* trabajadorDocente;
 		DoublyLinkedList<Persona>* trabajadorNoDocente;
 		DoublyLinkedList<Asignacion_EyC>* listaAsignacionEyC;
@@ -33,7 +33,6 @@ namespace Proyecto2MeganMorales1221120 {
 		Curso* cursoEstudiante;
 		Asignacion_EyC* asignaciones;
 		Estudiante* estudianteNuevo;
-		int carnet;
 	
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::GroupBox^ groupBox5;
@@ -53,7 +52,7 @@ namespace Proyecto2MeganMorales1221120 {
 		  
 	public:
 		
-		PortalEstudiantes(DoublyLinkedList<Estudiante>* estudiantesPregrado, DoublyLinkedList<Estudiante>* estudiantesPostgrado, DoublyLinkedList<Persona>* trabajadorDocente, DoublyLinkedList<Persona>* trabajadorNoDocente, DoublyLinkedList<Curso>* listaCurso, DoublyLinkedList<Asignacion_EyC>* listaAsignacionEyC)
+		PortalEstudiantes(DoublyLinkedList<Persona>* estudiantesPregrado, DoublyLinkedList<Persona>* estudiantesPostgrado, DoublyLinkedList<Persona>* trabajadorDocente, DoublyLinkedList<Persona>* trabajadorNoDocente, DoublyLinkedList<Curso>* listaCurso, DoublyLinkedList<Asignacion_EyC>* listaAsignacionEyC)
 		{
 			InitializeComponent();
 			this->estudiantesPregrado = estudiantesPregrado;
@@ -309,7 +308,6 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->btnBuscarDpi->TabIndex = 4;
 			this->btnBuscarDpi->Text = L"Buscar";
 			this->btnBuscarDpi->UseVisualStyleBackColor = true;
-			this->btnBuscarDpi->Click += gcnew System::EventHandler(this, &PortalEstudiantes::btnBuscarDpi_Click);
 			// 
 			// groupBox1
 			// 
@@ -472,7 +470,6 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->btnAgregarAlumno->TabIndex = 16;
 			this->btnAgregarAlumno->Text = L"Agregar";
 			this->btnAgregarAlumno->UseVisualStyleBackColor = true;
-			this->btnAgregarAlumno->Click += gcnew System::EventHandler(this, &PortalEstudiantes::btnAgregarAlumno_Click);
 			// 
 			// btnCalcularCantidadDeAlumnos
 			// 
@@ -739,7 +736,6 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->btnEliminar->TabIndex = 42;
 			this->btnEliminar->Text = L"Eliminar";
 			this->btnEliminar->UseVisualStyleBackColor = true;
-			this->btnEliminar->Click += gcnew System::EventHandler(this, &PortalEstudiantes::btnEliminar_Click);
 			// 
 			// groupBox4
 			// 
@@ -819,7 +815,6 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->txtAgregarCurso->TabIndex = 34;
 			this->txtAgregarCurso->Text = L"Agregar";
 			this->txtAgregarCurso->UseVisualStyleBackColor = true;
-			this->txtAgregarCurso->Click += gcnew System::EventHandler(this, &PortalEstudiantes::txtAgregarCurso_Click);
 			// 
 			// txtCursos
 			// 
@@ -861,7 +856,6 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->btnExportarEstudiantes->TabIndex = 61;
 			this->btnExportarEstudiantes->Text = L"Exportar";
 			this->btnExportarEstudiantes->UseVisualStyleBackColor = true;
-			this->btnExportarEstudiantes->Click += gcnew System::EventHandler(this, &PortalEstudiantes::btnExportarEstudiantes_Click);
 			// 
 			// ofdImportar
 			// 
@@ -1104,51 +1098,6 @@ private: int generarCarnet(String^ añoIngreso) {
 		String^ concatenacion = (Convert::ToString(numeroAleatorio))->Substring(0,5) + añoIngreso->Substring(2, 2);
 		return Convert::ToInt64(concatenacion);		
 	}
-	   void actualizarDataEstudiante() {
-		   int contador = 0;
-		   
-		   
-
-		   while (estudiantesPostgrado->get(contador) != nullptr) {
-			   ReestablecerMatriz();
-			   String^ Nombre = gcnew String((estudiantesPostgrado->get(contador)->getNombre()).c_str());
-			   String^ Apellido = gcnew String((estudiantesPostgrado->get(contador)->getApellidos()).c_str());
-			   String^ Facultad = gcnew String((estudiantesPostgrado->get(contador)->getFacultad()).c_str());
-			   String^ Nivel = gcnew String((estudiantesPostgrado->get(contador)->getNivelAcademico()).c_str());
-			   String^ Dpi = gcnew String((estudiantesPostgrado->get(contador)->getDpi()).c_str());
-			   int carnet2 = (estudiantesPostgrado->get(contador)->getCarnet());
-			   int añoDeIngreso = (estudiantesPostgrado->get(contador)->getAñoIngreso());
-			   
-
-			   for (int j = 0; j < 7; j++) {
-				   array<String^>^ heardersColumns = { "Carnet", "Apellido", "Nombre", "Año de ingreso", "DPI", "Facultad", "Grado académico" };
-				  
-				   DataGridViewColumn^ nuevacolumna = gcnew DataGridViewColumn();
-				   nuevacolumna->Width = 100;
-				   DataGridViewCell^ cellTemplate = gcnew DataGridViewTextBoxCell();
-				   nuevacolumna->CellTemplate = cellTemplate;
-				   if (j < (heardersColumns->Length) - 1) {
-					   nuevacolumna->HeaderText = heardersColumns[j];
-				   }
-				   //Inserta la columna
-				   dataMostrar->Columns->Add(nuevacolumna);
-			   }
-			   for (int i = 0; i < estudiantesPostgrado->getSize(); i++) {
-
-				   dataMostrar->Rows->Add();
-				   dataMostrar->Rows[i]->Cells[0]->Value = carnet2;
-				   dataMostrar->Rows[i]->Cells[1]->Value = Apellido;
-				   dataMostrar->Rows[i]->Cells[2]->Value = Nombre;
-				   dataMostrar->Rows[i]->Cells[3]->Value = añoDeIngreso;
-				   dataMostrar->Rows[i]->Cells[4]->Value = Dpi;
-				   dataMostrar->Rows[i]->Cells[5]->Value = Facultad;
-				   dataMostrar->Rows[i]->Cells[6]->Value = Nivel;
-			   }
-			   contador++;
-		   }
-
-	   }
-
 	   void MarshalString(String^ s, string& os) {
 		   using namespace Runtime::InteropServices;
 		   const char* chars = (const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
@@ -1204,7 +1153,7 @@ private: System::Void btnImportarDatos_Click(System::Object^ sender, System::Eve
 				//Llena el DatagridView
 				for (int i = 0; i < archivoLineas->Length; i++) {
 					array<String^>^ fila = archivoLineas[i]->Split(',');
-					 carnet = generarCarnet(fila[2]);
+					int carnet = generarCarnet(fila[2]);
 					
 					String^ apellido = fila[0];
 					String^ nombre = fila[1];
@@ -1265,135 +1214,6 @@ private: System::Void btnImportarDatos_Click(System::Object^ sender, System::Eve
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
-}
-private: System::Void btnAgregarAlumno_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-	if (txtApellido->Text->Trim() != "" && txtNombre->Text->Trim() != "" && txtAño->Text->Trim() != "" && txtDpi->Text->Trim() != "" && txtFacultad->Text->Trim() != "" && txtPreOpost->Text->Trim() != "") {
-		String^ apellido = txtApellido->Text;
-		String^ nombre = txtNombre->Text;
-		int año = Convert::ToInt64(txtAño->Text);
-		carnet = generarCarnet(txtAño->Text);
-		String^ dpi = txtDpi->Text;
-		String^ facultad = txtFacultad->Text;
-		String^ gradoAcademico = txtPreOpost->Text;
-
-		string apellido1, nombre1, facultad1, gradoAcademico1, dpi1;
-
-		MarshalString(apellido, apellido1);
-		MarshalString(nombre, nombre1);
-		MarshalString(facultad, facultad1);
-		MarshalString(gradoAcademico, gradoAcademico1);
-		MarshalString(dpi, dpi1);
-
-	
-		estudianteNuevo = new Estudiante(nombre1, apellido1, dpi1, gradoAcademico1, carnet, facultad1, año);
-		if (gradoAcademico == "pregrado") {
-			this->estudiantesPregrado->add(estudianteNuevo);
-		}
-		else if (gradoAcademico == "postgrado" || gradoAcademico == "doctorado") {
-			this->estudiantesPostgrado->add(estudianteNuevo);
-		}
-		actualizarDataEstudiante();
-	}
-	else {
-		MessageBox::Show("Llene todos los campos"," ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-	}
-}
-private: System::Void txtAgregarCurso_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-		if (txtCarnetCursos->Text->Trim() != " " && txtCursos->Text->Trim() != "" && txtNota->Text->Trim() != "") {
-			carnet = Convert::ToInt64(txtCarnetCursos->Text);
-			if (estudiantesPostgrado->getItem(carnet) != nullptr) {
-				String^ curso = txtCursos->Text;
-				double nota = Convert::ToDouble(txtNota->Text);
-				string curso1;
-				MarshalString(curso, curso1);
-				cursoEstudiante = new Curso(curso1);
-				asignaciones = new Asignacion_EyC(estudiantesPostgrado->getItem(carnet), cursoEstudiante, nota);
-			}
-			else if (estudiantesPregrado->getItem(carnet)!=nullptr) {
-				String^ curso = txtCursos->Text;
-				double nota = Convert::ToDouble(txtNota->Text);
-				string curso1;
-				MarshalString(curso, curso1);
-				cursoEstudiante = new Curso(curso1);
-				asignaciones = new Asignacion_EyC(estudiantesPregrado->getItem(carnet), cursoEstudiante, nota);
-			}
-		}
-		else {
-			MessageBox::Show("Llene todos los campos", " ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-		}
-		
-}
-private: System::Void btnEliminar_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (txtCarnetEliminar->Text->Trim() != " " ) {
-		carnet = Convert::ToInt64(txtCarnetEliminar->Text);
-
-		
-	}
-	else {
-		MessageBox::Show("Llene todos los campos", " ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-	}
-}
-private: System::Void btnBuscarDpi_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (txtBuscarDpi->Text->Trim() != " ") {
-		String^ dpi = (txtBuscarDpi->Text);
-		string dpi1;
-		MarshalString(dpi, dpi1);
-
-		if (estudiantesPostgrado->getItem2(dpi1) != nullptr) {
-			String^ Nombre = gcnew String((estudiantesPostgrado->getItem2(dpi1)->getNombre()).c_str());
-			String^ Apellido = gcnew String((estudiantesPostgrado->getItem2(dpi1)->getApellidos()).c_str());
-			String^ Facultad = gcnew String((estudiantesPostgrado->getItem2(dpi1)->getFacultad()).c_str());
-			int carnet2 = (estudiantesPostgrado->getItem2(dpi1)->getCarnet());
-			MessageBox::Show("El estudiante buscado es: "+ Nombre + " "+ Apellido + " En la facultad de: " + Facultad +".  Carnet: " +carnet2 , "", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		else if (estudiantesPregrado->getItem(carnet) != nullptr) {
-			String^ Nombre = gcnew String((estudiantesPregrado->getItem2(dpi1)->getNombre()).c_str());
-			String^ Apellido = gcnew String((estudiantesPregrado->getItem2(dpi1)->getDpi()).c_str());
-			String^ Facultad = gcnew String((estudiantesPregrado->getItem2(dpi1)->getFacultad()).c_str());
-			int carnet2 = (estudiantesPregrado->getItem2(dpi1)->getCarnet());
-			MessageBox::Show("El estudiante buscado es: " + Nombre + " " + Apellido + " En la facultad de: " + Facultad + ".  Carnet: " + carnet2, "", MessageBoxButtons::OK, MessageBoxIcon::Information);
-		}
-		else {
-			MessageBox::Show("Estudiante no encontrado", " ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-		}
-	}
-	else {
-		MessageBox::Show("Llene todos los campos", " ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-	}
-}
-private: System::Void btnExportarEstudiantes_Click(System::Object^ sender, System::EventArgs^ e) {
-	if ((dataMostrar->Columns->Count > 0) && (dataMostrar->Rows->Count > 0)) {
-		saveFileDialog1->Filter = "Archivos separados por coma (csv) | *.csv";
-		if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
-
-			//Guardo el contenido del DataGridView en una sola cadena
-			String^ linea = "";
-			for (int i = 0; i < dataMostrar->Rows->Count; i++) {
-				for (int j = 0; j < dataMostrar->Columns->Count; j++) {
-					if (j == dataMostrar->Columns->Count - 1)
-						linea += "" + dataMostrar->Rows[i]->Cells[j]->Value + "\r\n";
-					else
-						linea += "" + dataMostrar->Rows[i]->Cells[j]->Value + ",";
-				}
-			}
-
-			//Utilizo el objeto System::IO::File para guardar el texto
-			//Importante haber llamado al namespace System::IO antes de usar File
-			File::WriteAllText(saveFileDialog1->FileName, linea);
-			MessageBox::Show("Archivo guardado exitosamente"
-				, "Operación exitosa"
-				, MessageBoxButtons::OK
-				, MessageBoxIcon::Information);
-		}
-		else {
-			MessageBox::Show("No se exportó el archivo"
-				, "Archivo no seleccionado"
-				, MessageBoxButtons::OK
-				, MessageBoxIcon::Exclamation);
-		}
-	}
 }
 };
 }

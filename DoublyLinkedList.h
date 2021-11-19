@@ -1,6 +1,4 @@
 #pragma once
-#include <string>
-using std::string;
 
 template <typename T>
 class DoublyLinkedList
@@ -51,56 +49,6 @@ public:
         }
         return iterator->item;
     }
-    T* getItem(int carnet) {
-        if (this->isEmpty()) {
-            return nullptr;
-        }
-        else {
-            Node* iterator = this->head;
-            while (iterator!=nullptr)
-            {
-                if (iterator->item->getCarnet() == carnet) {
-                    return iterator->item;
-                }
-                iterator = iterator->next;
-            }
-            return nullptr;
-        }
-    }
-    T* getItem2(string dpi) {
-        if (this->isEmpty()) {
-            return nullptr;
-        }
-        else {
-            Node* iterator = this->head;
-            while (iterator != nullptr)
-            {
-                if (iterator->item->getDpi() == dpi) {
-                    return iterator->item;
-                }
-                iterator = iterator->next;
-            }
-            return nullptr;
-        }
-    }
-    /*void removeAt(int carnet) {
-        if (this->isEmpty()) {
-            return nullptr;
-        }
-        else {
-            Node* temp = this->head;
-            this->getItem(carnet);
-            if (this->getItem(carnet)!=nullptr) {
-                
-                if (this->getItem(carnet)->item = this->head) {
-                    head = temp->next;
-                }
-                else {
-
-                }
-            }
-        }
-    }*/
     void clear() {
         this->head = nullptr;
         this->tail = nullptr;
@@ -129,5 +77,10 @@ public:
             iterator->item = item;
         }
     }
-    
+
+    /*void removeAt(T* item) {
+        Node* temp = this->head;
+
+
+    }*/
 };

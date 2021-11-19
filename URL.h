@@ -21,8 +21,8 @@ namespace Proyecto2MeganMorales1221120 {
 	/// </summary>
 	public ref class URL : public System::Windows::Forms::Form
 	{
-		DoublyLinkedList<Estudiante>* estudiantesPregrado= new DoublyLinkedList<Estudiante>;
-		DoublyLinkedList<Estudiante>* estudiantesPostgrado = new DoublyLinkedList<Estudiante>;
+		DoublyLinkedList<Persona>* estudiantesPregrado= new DoublyLinkedList<Persona>;
+		DoublyLinkedList<Persona>* estudiantesPostgrado = new DoublyLinkedList<Persona>;
 		DoublyLinkedList<Persona>* trabajadorDocente = new DoublyLinkedList<Persona>;
 		DoublyLinkedList<Persona>* trabajadorNoDocente = new DoublyLinkedList<Persona>;
 		DoublyLinkedList<Curso>* listaCurso = new DoublyLinkedList<Curso>;
