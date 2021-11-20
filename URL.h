@@ -21,8 +21,8 @@ namespace Proyecto2MeganMorales1221120 {
 	/// </summary>
 	public ref class URL : public System::Windows::Forms::Form
 	{
-		DoublyLinkedList<Estudiante>* estudiantesPregrado = new DoublyLinkedList<Estudiante>;
-		DoublyLinkedList<Estudiante>* estudiantesPostgrado = new DoublyLinkedList<Estudiante>;
+		DoublyLinkedList<Persona>* estudiantesPregrado= new DoublyLinkedList<Persona>;
+		DoublyLinkedList<Persona>* estudiantesPostgrado = new DoublyLinkedList<Persona>;
 		DoublyLinkedList<Persona>* trabajadorDocente = new DoublyLinkedList<Persona>;
 		DoublyLinkedList<Persona>* trabajadorNoDocente = new DoublyLinkedList<Persona>;
 		DoublyLinkedList<Curso>* listaCurso = new DoublyLinkedList<Curso>;
@@ -57,8 +57,8 @@ namespace Proyecto2MeganMorales1221120 {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
-
-
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Label^ label4;
 
 
 
@@ -82,6 +82,8 @@ namespace Proyecto2MeganMorales1221120 {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -142,12 +144,37 @@ namespace Proyecto2MeganMorales1221120 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &URL::button2_Click);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(172, 183);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(59, 28);
+			this->button3->TabIndex = 8;
+			this->button3->Text = L"Ir";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &URL::button3_Click);
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Papyrus", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(35, 185);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(68, 27);
+			this->label4->TabIndex = 7;
+			this->label4->Text = L"Cursos";
+			// 
 			// URL
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->ClientSize = System::Drawing::Size(285, 208);
+			this->ClientSize = System::Drawing::Size(285, 244);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label3);
@@ -162,7 +189,7 @@ namespace Proyecto2MeganMorales1221120 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		PortalEstudiantes^ Portal_Estudiantes = gcnew PortalEstudiantes(this->estudiantesPregrado, this->estudiantesPostgrado, this->trabajadorDocente, this->trabajadorNoDocente, this->listaCurso, this->asignacionEyC);
+		PortalEstudiantes^ Portal_Estudiantes = gcnew PortalEstudiantes(this->estudiantesPregrado,this->estudiantesPostgrado,this->trabajadorDocente,this->trabajadorNoDocente,this->listaCurso, this->asignacionEyC);
 		this->Hide();
 		Portal_Estudiantes->ShowDialog();
 		this->Show();
