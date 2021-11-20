@@ -149,6 +149,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Cursos.resx">
+      <DependentUpon>Cursos.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PortalEstudiantes.resx">
       <DependentUpon>PortalEstudiantes.h</DependentUpon>
     </EmbeddedResource>
