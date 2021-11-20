@@ -3,7 +3,6 @@
 #include "Imprimir.h"
 #include <iostream>
 #include <string>
-#include "NodoDoble.h"
 
 #include <ctime>
 #include <stdlib.h>
@@ -2287,9 +2286,6 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 	Refrescar();
 }
-	  
-
-	 
 };
 }
 
