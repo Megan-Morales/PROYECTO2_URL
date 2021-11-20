@@ -121,35 +121,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Asignacion_EyC.cpp" />
-    <ClCompile Include="Comparator.cpp" />
     <ClCompile Include="Curso.cpp" />
     <ClCompile Include="Cursos.cpp" />
     <ClCompile Include="Estudiante.cpp" />
-    <ClCompile Include="Imprimir.cpp" />
-    <ClCompile Include="ListaDoble.cpp" />
-    <ClCompile Include="ListaSimple.cpp" />
-    <ClCompile Include="NodoDoble.cpp" />
-    <ClCompile Include="NodoSimple.cpp" />
     <ClCompile Include="Persona.cpp" />
-    <ClCompile Include="Pila.cpp" />
     <ClCompile Include="PortalEstudiantes.cpp" />
     <ClCompile Include="PortalTrabajadores.cpp" />
     <ClCompile Include="URL.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Asignacion_EyC.h" />
-    <ClInclude Include="Comparator.h" />
     <ClInclude Include="Curso.h" />
     <ClInclude Include="Cursos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="DoublyLinkedList.h" />
     <ClInclude Include="Estudiante.h" />
-    <ClInclude Include="Imprimir.h" />
-    <ClInclude Include="ListaDoble.h" />
-    <ClInclude Include="ListaSimple.h" />
-    <ClInclude Include="NodoDoble.h" />
-    <ClInclude Include="NodoSimple.h" />
     <ClInclude Include="Persona.h" />
     <ClInclude Include="PortalEstudiantes.h">
       <FileType>CppForm</FileType>
@@ -162,6 +149,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Cursos.resx">
+      <DependentUpon>Cursos.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PortalEstudiantes.resx">
       <DependentUpon>PortalEstudiantes.h</DependentUpon>
     </EmbeddedResource>
