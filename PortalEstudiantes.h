@@ -203,7 +203,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->btnImportarDatos = (gcnew System::Windows::Forms::Button());
 			this->txtBuscarDpi = (gcnew System::Windows::Forms::TextBox());
 			this->btnBuscarDpi = (gcnew System::Windows::Forms::Button());
@@ -498,6 +498,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->btnCalcularCantidadDeAlumnosFacultad->TabIndex = 20;
 			this->btnCalcularCantidadDeAlumnosFacultad->Text = L"Calcular";
 			this->btnCalcularCantidadDeAlumnosFacultad->UseVisualStyleBackColor = true;
+			this->btnCalcularCantidadDeAlumnosFacultad->Click += gcnew System::EventHandler(this, &PortalEstudiantes::btnCalcularCantidadDeAlumnosFacultad_Click);
 			// 
 			// groupBox2
 			// 
@@ -871,15 +872,15 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			// 
 			// dataMostrar
 			// 
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Control;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle1->BackColor = System::Drawing::SystemColors::Control;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Papyrus", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataMostrar->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataMostrar->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataMostrar->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataMostrar->Location = System::Drawing::Point(12, 153);
 			this->dataMostrar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
@@ -946,6 +947,7 @@ private: System::Windows::Forms::OpenFileDialog^ ofdImportar;
 			this->btnPostgradoCantidad->TabIndex = 49;
 			this->btnPostgradoCantidad->Text = L"Calcular";
 			this->btnPostgradoCantidad->UseVisualStyleBackColor = true;
+			this->btnPostgradoCantidad->Click += gcnew System::EventHandler(this, &PortalEstudiantes::btnPostgradoCantidad_Click);
 			// 
 			// label4
 			// 
@@ -1672,6 +1674,55 @@ private: System::Void btnFacultadPregrado_Click(System::Object^ sender, System::
 	}
 }
 private: System::Void btnCarnetProm_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (txtCarnetProm->Text->Trim() != "") {
+		carnet = Convert::ToInt64(txtCarnetProm->Text);
+		Estudiante* estudianteBuscadoPostgrado = estudiantesPostgrado->getItem(carnet);
+		Estudiante* estudianteBuscadoPregrado = estudiantesPregrado->getItem(carnet);
+		if (estudianteBuscadoPostgrado != nullptr) {
+			double promedio = listaAsignacionEyC->promedioEstudiante(estudianteBuscadoPostgrado->getCarnet());
+			Asignacion_EyC* asignacionMasAlta = listaAsignacionEyC->getCursoNotaMasAlta(estudianteBuscadoPostgrado->getCarnet());
+			double nota = asignacionMasAlta->getNota();
+			String^ curso = gcnew String((asignacionMasAlta->getCurso()->getNombreCurso()).c_str());
+			MessageBox::Show("Promedio del estudiante: "+promedio+" La nota más alta pertence a la clase: "+ curso+" Con una nota de: "+nota, " ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+
+		}
+		else if (estudianteBuscadoPregrado != nullptr) {
+			double promedio = listaAsignacionEyC->promedioEstudiante(estudianteBuscadoPregrado->getCarnet());
+			Asignacion_EyC* asignacionMasAlta = listaAsignacionEyC->getCursoNotaMasAlta(estudianteBuscadoPregrado->getCarnet());
+			double nota = asignacionMasAlta->getNota();
+			String^ curso = gcnew String((asignacionMasAlta->getCurso()->getNombreCurso()).c_str());
+			MessageBox::Show("Promedio del estudiante: " + promedio + " La nota más alta pertence a la clase: " + curso + " Con una nota de: " + nota, " ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+		}
+		else {
+			MessageBox::Show("El estudiante con el carnet ingresado no existe.", " ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+		}
+	}
+	else {
+		MessageBox::Show("Llene todos los campos correctamente", " ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+	}
+}
+private: System::Void btnPostgradoCantidad_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("El número de estudiantes en postgrado: "+ estudiantesPostgrado->getSize()+"", "", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+}
+private: System::Void btnCalcularCantidadDeAlumnosFacultad_Click(System::Object^ sender, System::EventArgs^ e) {
+	try {
+		if (textBox1->Text->Trim() != "") {
+			String^ facultad = (textBox1->Text);
+			string facultad1;
+			MarshalString(facultad, facultad1);
+			DoublyLinkedList<Estudiante>* listaEstudiantesPregradoFacultad = estudiantesPregrado->getAlumnosPorFacultad(facultad1);
+			DoublyLinkedList<Estudiante>* listaEstudiantesPostgradoFacultad = estudiantesPostgrado->getAlumnosPorFacultad(facultad1);
+			int cantidadEstudiantes = listaEstudiantesPostgradoFacultad->getSize() + listaEstudiantesPregradoFacultad->getSize();
+
+			MessageBox::Show("Cantidad de alumnos por facultad: " + cantidadEstudiantes, "", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		}
+		else {
+			MessageBox::Show("Llene todos los campos", " ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+		}
+	}
+	catch (Exception^ error) {
+		MessageBox::Show("Ingrese una facultada válida para alumnas de pregrado.", " ", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
+	}
 }
 };
 }

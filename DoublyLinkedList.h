@@ -250,5 +250,25 @@ public:
         }
         return listaAlumnosPorFacultad;
     }
+    T* getCursoNotaMasAlta(int carnet) {
+        if (this->isEmpty()) {
+            return nullptr;
+        }
+        else {
+            Node* iterator = this->head;
+            T* asignacion_Con_Nota_Mas_Alta = nullptr;
+            while (iterator != nullptr)
+            {
+                if (asignacion_Con_Nota_Mas_Alta == nullptr && iterator->item->getEstudiante()->getCarnet() == carnet) {
+                    asignacion_Con_Nota_Mas_Alta = iterator->item;
+                }
+                else if (asignacion_Con_Nota_Mas_Alta != nullptr && iterator->item->getNota() > asignacion_Con_Nota_Mas_Alta->getNota()&& iterator->item->getEstudiante()->getCarnet() == carnet) {
+                    asignacion_Con_Nota_Mas_Alta = iterator->item;
+                }
+                iterator = iterator->next;
+            }
+            return asignacion_Con_Nota_Mas_Alta;
+        }
+    }
 
 };
