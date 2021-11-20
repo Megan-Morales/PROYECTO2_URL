@@ -210,4 +210,45 @@ public:
             return false;
         }
     }
+    double promedioEstudiante(int carnet) {
+        if (this->isEmpty()) {
+            return -1;
+        }
+        else {
+            Node* iterator = this->head;
+            int contCursos = 0;
+            double sumatoriaNotas = 0;
+
+            while (iterator != nullptr)
+            {
+                if (iterator->item->getEstudiante()->getCarnet() == carnet) {
+                    sumatoriaNotas = sumatoriaNotas + iterator->item->getNota();
+                    contCursos++;
+                }
+                iterator = iterator->next;
+            }
+            double promedio = sumatoriaNotas / contCursos;
+            return promedio;
+        }
+    }
+    DoublyLinkedList<T>* getAlumnosPorFacultad(string facultad) {
+        if (this->isEmpty()==true) {
+            return nullptr;
+        }
+        int contador = 0;
+        DoublyLinkedList<T>* listaAlumnosPorFacultad = new DoublyLinkedList<T>;
+
+        Node* iterator = this->head;
+        while (iterator != nullptr)
+        {
+            if (iterator->item->getFacultad() == facultad) {
+                //recordar que el template actual en esta lista es de las clase Asignacion_EyC por lo que guardamos un item que es de tipo Asignacion_EyC
+                listaAlumnosPorFacultad->add(iterator->item);
+                contador++;
+            }
+            iterator = iterator->next;
+        }
+        return listaAlumnosPorFacultad;
+    }
+
 };
