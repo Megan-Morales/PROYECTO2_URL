@@ -18,15 +18,15 @@ protected:
 
 public:
 
-    Estudiante(string nombre, string apellidos, string DPI, string nivelAcademico, int carnet, string facultad, int añoIngreso) :Persona(nombre, apellidos, DPI) {
+    Estudiante(string nombre, string apellidos, int DPI, string nivelAcademico, int carnet, string facultad, int añoIngreso) :Persona(nombre, apellidos, DPI) {
         this->nivelAcademico = nivelAcademico;
         this->carnet = carnet;
         this->facultad = facultad;
         this->añoIngreso = añoIngreso;
-        this->listaCursos = new DoublyLinkedList<Curso>(); //realmente nunca usamos este atributo ya que creamos las clases de asignaciones para evitar las relaciones de muchos a muchos.
+        this->listaCursos = new DoublyLinkedList<Curso>();
     }
 
-    void insertCurso(Curso* nuevoCurso) { //Agregar cursos al estudiante
+    void insertCurso(Curso *nuevoCurso) { //Agregar cursos al estudiante
         this->listaCursos->add(nuevoCurso);
 
     }
@@ -42,16 +42,6 @@ public:
     int getAñoIngreso() {
         return this->añoIngreso;
     }
-    void setNivelAcademico(string nivelAcademico) {
-        this->nivelAcademico = nivelAcademico;
-    }
-    void setFacultad(string facultad) {
-        this->facultad = facultad;
-    }
-    void setAñoIngreso(int añoIngreso) {
-        this->añoIngreso = añoIngreso;
-    }
-
 
 };
 
